@@ -15,3 +15,12 @@ export const getMovies = async (mediaType, period) => {
 
   return results;
 };
+
+export const getMovieById = async movieId => {
+  const searchUrl = `movie/${movieId}?api_key=${API_OPTIONS.apiKey}&language=en-US`;
+  const response = await axios.get(searchUrl);
+  const results = response.data;
+  //   console.log('API getMovieById  ==> ', response.data);
+
+  return results;
+};
