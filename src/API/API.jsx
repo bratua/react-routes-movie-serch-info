@@ -1,0 +1,17 @@
+import axios from 'axios';
+
+const API_OPTIONS = {
+  apiKey: 'bcb23eb0e57eead85fe68d64f412ef39',
+  apiBaseUrl: 'https://api.themoviedb.org/3/',
+};
+
+axios.defaults.baseURL = API_OPTIONS.apiBaseUrl;
+
+export const getMovies = async (mediaType, period) => {
+  const searchUrl = `trending/${mediaType}/${period}?api_key=${API_OPTIONS.apiKey}`;
+  const response = await axios.get(searchUrl);
+  const results = response.data.results;
+  //   console.log(results);
+
+  return results;
+};
