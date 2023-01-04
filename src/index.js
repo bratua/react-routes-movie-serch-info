@@ -10,9 +10,9 @@ import App from 'components/App';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter basename="/react-routes-movie-serch-info">
-      {/* <ThemeProvider theme={theme}> */}
-      <App />
-      {/* </ThemeProvider> */}
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

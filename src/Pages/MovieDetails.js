@@ -1,5 +1,5 @@
 import * as API from '../API';
-import { useParams } from 'react-router-dom';
+import { Outlet, useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 const MovieDetails = () => {
@@ -7,14 +7,15 @@ const MovieDetails = () => {
   const [movie, setMovie] = useState();
 
   useEffect(() => {
-    API.getMovieById(movieId).then(setMovie);
+    API.getMovieDetailsById(movieId).then(setMovie);
   }, []);
 
   if (!movie) {
     return;
   }
 
-  console.log('movie  === ', movie);
+  // console.log('movie  === ', movie);
+
   const {
     original_title,
     homepage,
@@ -24,8 +25,10 @@ const MovieDetails = () => {
     budget,
     production_countries,
   } = movie;
+
   return (
     <div>
+      <button type="button">Back</button>
       <a href={homepage}>
         <h2>{original_title}</h2>
       </a>
@@ -35,7 +38,7 @@ const MovieDetails = () => {
       />
       <ul>
         {genres.map(genre => (
-          <li>{genre.name}</li>
+          <li key={genre.name}>{genre.name}</li>
         ))}
       </ul>
       <p>Budget: {budget}$</p>
@@ -43,11 +46,17 @@ const MovieDetails = () => {
         Country:
         <ul>
           {production_countries.map(country => (
-            <li>{country.name}</li>
+            <li key={country.name}>{country.name}</li>
           ))}
         </ul>
       </div>
       <p>{overview}</p>
+
+      <div>
+        <Link to="cast">Cast</Link>
+        <Link to="reviews">Reviews</Link>
+      </div>
+      <Outlet />
     </div>
   );
 };
