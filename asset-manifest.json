@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-routes-movie-serch-info/static/css/main.64ba0479.css",
+    "main.js": "/react-routes-movie-serch-info/static/js/main.dee1bbc2.js",
+    "index.html": "/react-routes-movie-serch-info/index.html",
+    "main.64ba0479.css.map": "/react-routes-movie-serch-info/static/css/main.64ba0479.css.map",
+    "main.dee1bbc2.js.map": "/react-routes-movie-serch-info/static/js/main.dee1bbc2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.64ba0479.css",
+    "static/js/main.dee1bbc2.js"
+  ]
+}
