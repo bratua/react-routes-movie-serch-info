@@ -8,7 +8,7 @@ const Reviews = () => {
 
   useEffect(() => {
     API.getMovieReviewsById(movieId).then(setReviews);
-  }, []);
+  }, [movieId]);
 
   if (!reviews) {
     return;

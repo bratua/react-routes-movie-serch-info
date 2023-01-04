@@ -8,7 +8,7 @@ const MovieDetails = () => {
 
   useEffect(() => {
     API.getMovieDetailsById(movieId).then(setMovie);
-  }, []);
+  }, [movieId]);
 
   if (!movie) {
     return;

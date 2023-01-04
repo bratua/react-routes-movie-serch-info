@@ -8,7 +8,7 @@ const Cast = () => {
 
   useEffect(() => {
     API.getMovieCastById(movieId).then(setCast);
-  }, []);
+  }, [movieId]);
 
   if (!cast) {
     return;
