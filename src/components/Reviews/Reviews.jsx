@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import * as API from '../../API';
+import ReviewsCard from 'components/ReviewsCard';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -14,24 +15,7 @@ const Reviews = () => {
     return;
   }
 
-  //   console.log('reviews ===> ', reviews);
-
-  return (
-    <div>
-      <h3>Reviews</h3>
-      <ul>
-        {reviews.map(({ author, content, created_at }) => {
-          return (
-            <li key={created_at}>
-              <p>{author}</p>
-              <p>{created_at}</p>
-              <p>{content}</p>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  );
+  return <ReviewsCard reviews={reviews} />;
 };
 
 export default Reviews;

@@ -30,7 +30,10 @@ const Cast = () => {
                   alt={actor.name}
                 />
               ) : (
-                'NO IMG!! NEED a default photo!!!'
+                <img
+                  src="https://via.placeholder.com/200x300"
+                  alt={actor.name}
+                />
               )}
             </div>
           </li>

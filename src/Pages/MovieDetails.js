@@ -1,10 +1,15 @@
 import * as API from '../API';
-import { Outlet, useParams, Link } from 'react-router-dom';
+import { Outlet, useParams, Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState();
+  const location = useLocation();
+  const backLink = location.state?.from ?? '/';
+
+  // console.log('MovieDetails location===> ', location);
+  // console.log('MovieDetails backLink===> ', backLink);
 
   useEffect(() => {
     API.getMovieDetailsById(movieId).then(setMovie);
@@ -28,7 +33,7 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <button type="button">Back</button>
+      <Link to={backLink}>BACK</Link>
       <a href={homepage}>
         <h2>{original_title}</h2>
       </a>
