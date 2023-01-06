@@ -1,11 +1,19 @@
 import * as API from '../API';
-import { Outlet, useParams, Link, useLocation } from 'react-router-dom';
+import {
+  Outlet,
+  useParams,
+  Link,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { NavButons, MovieDetailsButtons } from 'Pages/MovieDetails.styled';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState();
   const location = useLocation();
+  const navigate = useNavigate();
   const backLink = location.state?.from ?? '/';
 
   // console.log('MovieDetails location===> ', location);
@@ -18,6 +26,8 @@ const MovieDetails = () => {
   if (!movie) {
     return;
   }
+
+  // navigate('cast');
 
   // console.log('movie  === ', movie);
 
@@ -57,10 +67,10 @@ const MovieDetails = () => {
       </div>
       <p>{overview}</p>
 
-      <div>
-        <Link to="cast">Cast</Link>
-        <Link to="reviews">Reviews</Link>
-      </div>
+      <MovieDetailsButtons>
+        <NavButons to="cast">Cast</NavButons>
+        <NavButons to="reviews">Reviews</NavButons>
+      </MovieDetailsButtons>
       <Outlet />
     </div>
   );

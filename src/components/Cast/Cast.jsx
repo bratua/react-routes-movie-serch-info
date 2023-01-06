@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import * as API from '../../API';
+import CastCard from 'components/CastCard';
 
 const Cast = () => {
   const [cast, setCast] = useState([]);
@@ -14,32 +15,8 @@ const Cast = () => {
     return;
   }
 
-  //   console.log('Cast ===> ', cast);
+  // console.log('Cast ===> ', cast);
 
-  return (
-    <div>
-      <h3>Cast:</h3>
-      <ul>
-        {cast.map(actor => (
-          <li key={actor.name}>
-            <div>
-              <p>{actor.name}</p>
-              {actor.profile_path ? (
-                <img
-                  src={`https://image.tmdb.org/t/p/w200/${actor.profile_path}`}
-                  alt={actor.name}
-                />
-              ) : (
-                <img
-                  src="https://via.placeholder.com/200x300"
-                  alt={actor.name}
-                />
-              )}
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+  return <CastCard cast={cast} />;
 };
 export default Cast;

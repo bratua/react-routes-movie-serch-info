@@ -1,35 +1,21 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import * as API from '../API';
+import PopularMovies from 'components/PopularMovies';
 
 const Home = () => {
-  const [movies, setDayMovie] = useState([]);
-  const location = useLocation();
-  // console.log('Home location===> ', location);
+  const [popularMovies, setPopularMovies] = useState([]);
 
   useEffect(() => {
-    API.getTrendingMovies('movie', 'day').then(setDayMovie);
+    API.getTrendingMovies('movie', 'day').then(setPopularMovies);
   }, []);
 
-  if (!movies) {
+  if (!popularMovies) {
     return;
   }
 
   // console.log('MOVIES = HOME ', movies);
 
-  return (
-    <ul>
-      {movies.map(movie => {
-        return (
-          <li key={movie.id}>
-            <Link to={`movies/${movie.id}`} state={{ from: location }}>
-              {movie.original_title}
-            </Link>
-          </li>
-        );
-      })}
-    </ul>
-  );
+  return <PopularMovies popularMovies={popularMovies} />;
 };
 
 export default Home;

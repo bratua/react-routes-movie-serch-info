@@ -1,15 +1,48 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+  margin: 10px;
+`;
 
-export const Title = styled.h3``;
+export const Title = styled.h3`
+  padding: 0;
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+`;
 
-export const ReviewList = styled.ul``;
+export const ReviewList = styled.ul`
+  padding: 0;
+  margin: 0;
+`;
 
-export const ListItem = styled.li``;
+export const ReviewListItem = styled.li`
+  list-style: none;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 
-export const ReviewAuthor = styled.p``;
+  :nth-child(odd) {
+    background-color: #dfdfdf;
+  }
+`;
 
-export const ReviewDate = styled.p``;
+export const ReviewAuthor = styled.p`
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 25px;
+  font-weight: 700;
+`;
 
-export const ReviewText = styled.p``;
+export const ReviewDate = styled.p`
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-style: italic;
+`;
+
+export const ReviewText = styled.p`
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+`;
