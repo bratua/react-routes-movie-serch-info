@@ -2,7 +2,6 @@ import * as API from '../API';
 import {
   Outlet,
   useParams,
-  Link,
   useLocation,
   // useNavigate,
 } from 'react-router-dom';
@@ -43,8 +42,12 @@ const MovieDetails = () => {
       <BackButon to={backLink}>BACK</BackButon>
       <MovieCard movie={movie}></MovieCard>
       <MovieDetailsButtons>
-        <NavButons to="cast">Cast</NavButons>
-        <NavButons to="reviews">Reviews</NavButons>
+        <NavButons to="cast" state={{ from: backLink }}>
+          Cast
+        </NavButons>
+        <NavButons to="reviews" state={{ from: backLink }}>
+          Reviews
+        </NavButons>
       </MovieDetailsButtons>
       <Outlet />
     </Wrapper>

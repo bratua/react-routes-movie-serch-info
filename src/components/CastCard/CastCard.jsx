@@ -1,6 +1,7 @@
+import { useLocation } from 'react-router-dom';
+
 import {
   Wrapper,
-  Title,
   CastList,
   CastListItem,
   ActorName,
@@ -11,10 +12,9 @@ import {
 const CastCard = ({ cast }) => {
   return (
     <Wrapper>
-      {/* <Title>Cast:</Title> */}
       <CastList>
-        {cast.map(({ name, character, profile_path }) => (
-          <CastListItem key={name}>
+        {cast.map(({ id, name, character, profile_path }) => (
+          <CastListItem key={id}>
             {profile_path ? (
               <ActorPhoto
                 src={`https://image.tmdb.org/t/p/w200/${profile_path}`}

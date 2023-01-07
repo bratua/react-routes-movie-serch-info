@@ -47,7 +47,7 @@ export const getMovieByName = async query => {
   const searchUrl = `search/movie?api_key=${API_OPTIONS.apiKey}&query=${query}`;
   const response = await axios.get(searchUrl);
   const results = response.data.results;
-  console.log('API getMovieByName  ==> ', results);
+  // console.log('API getMovieByName  ==> ', results);
 
   return results;
 };

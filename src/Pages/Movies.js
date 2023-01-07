@@ -1,13 +1,16 @@
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useLocation } from 'react-router-dom';
 import * as API from '../API';
 
-import { Wrapper } from 'Pages/Movies.styled.jsx';
+// import { Wrapper } from 'Pages/Movies.styled.jsx';
 import { useMemo, useState, useEffect } from 'react';
 import SearchBox from 'components/SearchBox';
+import Box from 'components/Box/Box';
+import { MoviesList } from 'components/MoviesList';
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [serchedMovies, setSerchedMovies] = useState([]);
+  const location = useLocation();
 
   //! --- get all search params
   const allSearchParams = useMemo(
@@ -31,25 +34,42 @@ const Movies = () => {
   }, [movieName]);
 
   //   console.log('movieName', movieName);
-  console.log('search result', serchedMovies);
+  //   console.log('search result', serchedMovies);
 
   return (
-    <Wrapper>
+    <Box>
       <h2>Movies page search</h2>
       <SearchBox value={movieName} onChange={changeQuerySearch} />
 
-      {/* Filtred Movie */}
       {movieName !== '' && (
-        <div>
-          <p>Search result</p>
-          <ul>
-            {serchedMovies.map(movie => (
-              <li>{movie.original_title}</li>
-            ))}
-          </ul>
-        </div>
+        <MoviesList movies={serchedMovies} state={{ from: location }} />
       )}
-    </Wrapper>
+    </Box>
   );
 };
 export default Movies;
+
+//  <MoviesList>
+//    {serchedMovies.map(({ id, original_title, poster_path }) => {
+//      return (
+//        <MoviesListItem key={id}>
+//          <Link to={`${id}`} state={{ from: location }}>
+//            <MoviesItem>
+//              {poster_path ? (
+//                <img
+//                  src={`https://image.tmdb.org/t/p/w200/${poster_path}`}
+//                  alt={original_title}
+//                />
+//              ) : (
+//                <img
+//                  src="https://via.placeholder.com/200x300"
+//                  alt={original_title}
+//                />
+//              )}
+//              <span>{original_title}</span>
+//            </MoviesItem>
+//          </Link>
+//        </MoviesListItem>
+//      );
+//    })}
+//  </MoviesList>;
