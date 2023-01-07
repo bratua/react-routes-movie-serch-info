@@ -17,7 +17,7 @@ export const getTrendingMovies = async (mediaType, period) => {
 };
 
 export const getMovieDetailsById = async movieId => {
-  const searchUrl = `movie/${movieId}?api_key=${API_OPTIONS.apiKey}&language=en-US`;
+  const searchUrl = `movie/${movieId}?api_key=${API_OPTIONS.apiKey}`;
   const response = await axios.get(searchUrl);
   const results = response.data;
   //   console.log('API getMovieById  ==> ', response.data);
@@ -26,7 +26,7 @@ export const getMovieDetailsById = async movieId => {
 };
 
 export const getMovieCastById = async movieId => {
-  const searchUrl = `movie/${movieId}/credits?api_key=${API_OPTIONS.apiKey}&language=en-US`;
+  const searchUrl = `movie/${movieId}/credits?api_key=${API_OPTIONS.apiKey}`;
   const response = await axios.get(searchUrl);
   const results = response.data.cast;
   // console.log('API getMovieCreditsById  ==> ', results);
@@ -35,10 +35,19 @@ export const getMovieCastById = async movieId => {
 };
 
 export const getMovieReviewsById = async movieId => {
-  const searchUrl = `movie/${movieId}/reviews?api_key=${API_OPTIONS.apiKey}&language=en-US`;
+  const searchUrl = `movie/${movieId}/reviews?api_key=${API_OPTIONS.apiKey}`;
   const response = await axios.get(searchUrl);
   const results = response.data.results;
   // console.log('API getMovieReviewsById  ==> ', results);
+
+  return results;
+};
+
+export const getMovieByName = async query => {
+  const searchUrl = `search/movie?api_key=${API_OPTIONS.apiKey}&query=${query}`;
+  const response = await axios.get(searchUrl);
+  const results = response.data.results;
+  console.log('API getMovieByName  ==> ', results);
 
   return results;
 };

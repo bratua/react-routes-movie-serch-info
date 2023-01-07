@@ -9,7 +9,7 @@ import {
 const PopularMovies = ({ popularMovies }) => {
   const location = useLocation();
   // console.log('PopularMovies location===> ', location);
-  console.log('PopularMovies ===> ', popularMovies);
+  // console.log('PopularMovies ===> ', popularMovies);
 
   return (
     <Wrapper>

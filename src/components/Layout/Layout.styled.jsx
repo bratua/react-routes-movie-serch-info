@@ -29,7 +29,7 @@ export const NavButons = styled(NavLink)`
   background-color: #ffffff;
   border-radius: 10px; */
 
-    padding: 10px;
+  padding: 10px;
   margin-top: 20px;
   margin-bottom: 20;
   text-decoration: none;
@@ -46,10 +46,11 @@ export const NavButons = styled(NavLink)`
     border: 2px solid orange;
     background-color: orange;
     color: #ffffff;
-
+  }
 
   &.active {
     color: #ffffff;
     background-color: orange;
+    border: 2px solid orange;
   }
 `;
