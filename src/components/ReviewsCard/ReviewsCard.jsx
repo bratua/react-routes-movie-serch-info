@@ -11,7 +11,7 @@ import {
 const ReviewsCard = ({ reviews }) => {
   return (
     <Wrapper>
-      <Title>Reviews:</Title>
+      {/* <Title>Reviews:</Title> */}
       <ReviewList>
         {reviews.map(({ author, content, created_at }) => {
           const localDateNormalize = new Date(created_at).toLocaleDateString();

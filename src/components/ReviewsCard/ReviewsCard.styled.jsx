@@ -19,12 +19,12 @@ export const ReviewList = styled.ul`
 export const ReviewListItem = styled.li`
   list-style: none;
   margin-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-
-  :nth-child(odd) {
+  padding: 20px;
+  background-color: #dfdfdf;
+  border-radius: 10px;
+  /* :nth-child(odd) {
     background-color: #dfdfdf;
-  }
+  } */
 `;
 
 export const ReviewAuthor = styled.p`

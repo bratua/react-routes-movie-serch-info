@@ -1,13 +1,37 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+export const Wrapper = styled.div`
+  margin: 0px;
+`;
+
 export const NavButons = styled(NavLink)`
-  padding: 10px;
+  /* padding: 10px;
   font-size: 30px;
   font-weight: 700;
   border: 2px solid #ffffff;
   background-color: #ffffff;
+  border-radius: 10px; */
+
+  /* display: inline-block; */
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  border: 2px solid #000000;
+  /* background-color: tomato; */
   border-radius: 10px;
+
+  :hover,
+  :focus {
+    border: 2px solid orange;
+    background-color: orange;
+    color: #ffffff;
+  }
 
   &.active {
     color: #ffffff;
@@ -22,5 +46,28 @@ export const MovieDetailsButtons = styled.div`
     text-decoration: none;
     list-style: none;
     color: #000000;
+  }
+`;
+
+export const BackButon = styled(NavLink)`
+  display: inline-block;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  border: 2px solid #000000;
+  /* background-color: tomato; */
+  border-radius: 10px;
+
+  :hover,
+  :focus {
+    border: 2px solid orange;
+
+    background-color: orange;
+    color: #ffffff;
   }
 `;

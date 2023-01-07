@@ -17,11 +17,14 @@ export const CastList = styled.ul`
 
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 20px;
 `;
 
 export const CastListItem = styled.li`
   list-style: none;
+  padding: 20px;
+  background-color: #dfdfdf;
+  border-radius: 10px;
 `;
 
 export const ActorName = styled.p`

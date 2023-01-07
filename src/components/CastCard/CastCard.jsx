@@ -11,7 +11,7 @@ import {
 const CastCard = ({ cast }) => {
   return (
     <Wrapper>
-      <Title>Cast:</Title>
+      {/* <Title>Cast:</Title> */}
       <CastList>
         {cast.map(({ name, character, profile_path }) => (
           <CastListItem key={name}>
