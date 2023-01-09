@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-routes-movie-serch-info/static/css/main.64ba0479.css",
-    "main.js": "/react-routes-movie-serch-info/static/js/main.1165e29a.js",
+    "main.js": "/react-routes-movie-serch-info/static/js/main.a3b490ad.js",
     "index.html": "/react-routes-movie-serch-info/index.html",
     "main.64ba0479.css.map": "/react-routes-movie-serch-info/static/css/main.64ba0479.css.map",
-    "main.1165e29a.js.map": "/react-routes-movie-serch-info/static/js/main.1165e29a.js.map"
+    "main.a3b490ad.js.map": "/react-routes-movie-serch-info/static/js/main.a3b490ad.js.map"
   },
   "entrypoints": [
     "static/css/main.64ba0479.css",
-    "static/js/main.1165e29a.js"
+    "static/js/main.a3b490ad.js"
   ]
 }
