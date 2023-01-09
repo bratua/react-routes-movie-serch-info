@@ -1,14 +1,14 @@
-import { Wrapper } from './SearchBox.styled';
+import { Wrapper, SearchField } from './SearchBox.styled';
 
 const SearchBox = ({ value, onChange }) => {
   return (
     <Wrapper>
-      <p>Input search query</p>
-      <input
+      <SearchField
         type="text"
         value={value}
         onChange={e => onChange(e.target.value)}
-      ></input>
+        placeholder="Input search query"
+      ></SearchField>
     </Wrapper>
   );
 };

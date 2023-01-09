@@ -19,16 +19,25 @@ const MovieCard = ({ movie }) => {
     production_countries,
   } = movie;
 
+  console.log(movie);
+
   return (
     <Wrapper>
       <MovieTitleLink href={homepage}>
         <MovieTitle>{original_title}</MovieTitle>
       </MovieTitleLink>
       <Container>
-        <MovieImage
-          src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
-          alt={original_title}
-        />
+        {poster_path ? (
+          <MovieImage
+            src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+            alt={original_title}
+          />
+        ) : (
+          <MovieImage
+            src="https://via.placeholder.com/500x750"
+            alt={original_title}
+          />
+        )}
 
         <div>
           <ListTitle>

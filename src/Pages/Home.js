@@ -15,7 +15,12 @@ const Home = () => {
 
   // console.log('MOVIES = HOME ', movies);
 
-  return <MoviesList movies={popularMovies} />;
+  return (
+    <main>
+      <h1>Popular Movies</h1>
+      <MoviesList movies={popularMovies} />
+    </main>
+  );
 };
 
 export default Home;

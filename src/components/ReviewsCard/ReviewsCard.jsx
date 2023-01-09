@@ -1,6 +1,5 @@
 import {
   Wrapper,
-  Title,
   ReviewList,
   ReviewListItem,
   ReviewAuthor,

@@ -1,10 +1,9 @@
 import { useSearchParams, useLocation } from 'react-router-dom';
 import * as API from '../API';
 
-// import { Wrapper } from 'Pages/Movies.styled.jsx';
+import { Wrapper } from 'Pages/Movies.styled.jsx';
 import { useMemo, useState, useEffect } from 'react';
 import SearchBox from 'components/SearchBox';
-import Box from 'components/Box';
 import MoviesList from 'components/MoviesList';
 
 const Movies = () => {
@@ -17,14 +16,14 @@ const Movies = () => {
     () => Object.fromEntries([...searchParams]),
     [searchParams]
   );
-  const { name } = allSearchParams;
+  const { query } = allSearchParams;
 
   // если в name будет undefuned или null то присваиваем пустую строку
-  const movieName = name ?? '';
+  const movieName = query ?? '';
   //! --- get all search params
 
   const changeQuerySearch = query => {
-    const newSearchQuery = query !== '' ? { name: query } : {};
+    const newSearchQuery = query !== '' ? { query } : {};
     setSearchParams(newSearchQuery);
   };
 
@@ -37,39 +36,16 @@ const Movies = () => {
   //   console.log('search result', serchedMovies);
 
   return (
-    <Box>
-      <h2>Movies page search</h2>
-      <SearchBox value={movieName} onChange={changeQuerySearch} />
+    <main>
+      <Wrapper>
+        <h1>Movies search page</h1>
+        <SearchBox value={movieName} onChange={changeQuerySearch} />
 
-      {movieName !== '' && (
-        <MoviesList movies={serchedMovies} state={{ from: location }} />
-      )}
-    </Box>
+        {movieName !== '' && (
+          <MoviesList movies={serchedMovies} state={{ from: location }} />
+        )}
+      </Wrapper>
+    </main>
   );
 };
 export default Movies;
-
-//  <MoviesList>
-//    {serchedMovies.map(({ id, original_title, poster_path }) => {
-//      return (
-//        <MoviesListItem key={id}>
-//          <Link to={`${id}`} state={{ from: location }}>
-//            <MoviesItem>
-//              {poster_path ? (
-//                <img
-//                  src={`https://image.tmdb.org/t/p/w200/${poster_path}`}
-//                  alt={original_title}
-//                />
-//              ) : (
-//                <img
-//                  src="https://via.placeholder.com/200x300"
-//                  alt={original_title}
-//                />
-//              )}
-//              <span>{original_title}</span>
-//            </MoviesItem>
-//          </Link>
-//        </MoviesListItem>
-//      );
-//    })}
-//  </MoviesList>;
