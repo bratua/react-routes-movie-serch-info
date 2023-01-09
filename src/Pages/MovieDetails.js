@@ -1,10 +1,5 @@
 import * as API from '../API';
-import {
-  Outlet,
-  useParams,
-  useLocation,
-  // useNavigate,
-} from 'react-router-dom';
+import { Outlet, useParams, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import {
   NavButons,
@@ -18,7 +13,6 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState();
   const location = useLocation();
-  // const navigate = useNavigate();
 
   const backLink = location.state?.from ?? '/';
 
@@ -32,10 +26,6 @@ const MovieDetails = () => {
   if (!movie) {
     return;
   }
-
-  // navigate('cast');
-
-  // console.log('movie  === ', movie);
 
   return (
     <Wrapper>

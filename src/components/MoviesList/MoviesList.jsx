@@ -6,8 +6,9 @@ import {
   Item,
 } from 'components/MoviesList/MoviesList.styled';
 
-const MoviesList = movies => {
+const MoviesList = ({ movies }) => {
   const location = useLocation();
+  const path = location.pathname === '/' ? `movies/` : ``;
 
   return (
     <Wrapper>
@@ -15,7 +16,7 @@ const MoviesList = movies => {
         {movies.map(({ id, original_title, poster_path }) => {
           return (
             <ListItem key={id}>
-              <Link to={`movies/${id}`} state={{ from: location }}>
+              <Link to={`${path}${id}`} state={{ from: location }}>
                 <Item>
                   {poster_path ? (
                     <img

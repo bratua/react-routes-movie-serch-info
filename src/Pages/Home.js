@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import * as API from '../API';
-import PopularMovies from 'components/PopularMovies';
+import MoviesList from 'components/MoviesList';
 
 const Home = () => {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -15,7 +15,7 @@ const Home = () => {
 
   // console.log('MOVIES = HOME ', movies);
 
-  return <PopularMovies popularMovies={popularMovies} />;
+  return <MoviesList movies={popularMovies} />;
 };
 
 export default Home;

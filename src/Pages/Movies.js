@@ -4,8 +4,8 @@ import * as API from '../API';
 // import { Wrapper } from 'Pages/Movies.styled.jsx';
 import { useMemo, useState, useEffect } from 'react';
 import SearchBox from 'components/SearchBox';
-import Box from 'components/Box/Box';
-import { MoviesList } from 'components/MoviesList';
+import Box from 'components/Box';
+import MoviesList from 'components/MoviesList';
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();

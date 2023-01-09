@@ -6,14 +6,6 @@ export const Wrapper = styled.div`
 `;
 
 export const NavButons = styled(NavLink)`
-  /* padding: 10px;
-  font-size: 30px;
-  font-weight: 700;
-  border: 2px solid #ffffff;
-  background-color: #ffffff;
-  border-radius: 10px; */
-
-  /* display: inline-block; */
   padding: 10px;
   margin-top: 20px;
   margin-bottom: 20;
