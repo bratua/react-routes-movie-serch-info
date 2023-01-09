@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import {
   Wrapper,
@@ -15,7 +16,10 @@ const Layout = () => {
           <NavButons to="/movies">Movies</NavButons>
         </NavigationBlock>
       </HeaderBlock>
-      <Outlet />
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </Wrapper>
   );
 };
